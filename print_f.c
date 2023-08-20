@@ -1,4 +1,34 @@
 #include "main.h"
+
+/**
+* print_char - Print a character and update character count.
+* @c: a character
+* @char_print: prints a character
+*/
+static void print_char(char c, int *char_print)
+{
+	    _putchar(c);
+	    (*char_print)++;
+}
+
+/**
+* print_string - Print a string and update character count.
+* @str: a string pointer
+* @char_print: prints a character
+*/
+static void print_string(char *str, int *char_print)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+	    _putchar(str[i]);
+	    (*char_print)++;
+		i++;
+	}
+}
+
+#include "main.h"
 /**
 *  _printf - a funtion that produces output according to format
 * @format: a character string
@@ -16,8 +46,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			_putchar(*format);
-			char_print++;
+			print_char(*format, &char_print);
 		}
 		else
 		{
@@ -26,26 +55,19 @@ int _printf(const char *format, ...)
 			break;
 			if (*format == '%')
 			{
-				_putchar('%');
-				char_print++;
+				print_char('%', &char_print);
 			}
 			else if (*format == 'c')
 			{
 				char c = va_arg(arg, int);
-				_putchar(c);
-				char_print++;
+
+				print_char(c, &char_print);
 			}
 			else if (*format == 's')
 			{
 				char *str = va_arg(arg, char*);
-				int len_str = 0;
 
-				while (str[len_str] != '\0')
-				{
-					_putchar(str[len_str]);
-					len_str++;
-					char_print++;
-				}
+				print_string(str, &char_print);
 			}
 		}
 		format++;
