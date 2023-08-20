@@ -18,13 +18,12 @@ static void print_char(char c, int *char_print)
 */
 static void print_string(char *str, int *char_print)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-	    _putchar(str[i]);
-	    (*char_print)++;
-		i++;
+		_putchar(str[i]);
+		(*char_print)++;
 	}
 }
 
