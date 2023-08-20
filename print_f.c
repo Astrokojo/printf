@@ -32,6 +32,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'c')
 			{
 				char c = va_arg(arg, int);
+
 				_putchar(c);
 				char_print++;
 			}
