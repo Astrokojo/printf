@@ -4,19 +4,22 @@
 * print_char - Print a character and update character count.
 * @c: a character
 * @char_print: prints a character
+* Return: c
 */
-void print_char(char c, int *char_print)
+int print_char(char c, int *char_print)
 {
 	    _putchar(c);
 	    (*char_print)++;
+		return (c);
 }
 
 /**
 * print_string - Print a string and update character count.
 * @str: a string pointer
 * @char_print: prints a character
+* Return: i
 */
-void print_string(char *str, int *char_print)
+int print_string(char *str, int *char_print)
 {
 	int i;
 
@@ -25,6 +28,7 @@ void print_string(char *str, int *char_print)
 		_putchar(str[i]);
 		(*char_print)++;
 	}
+	return (i);
 }
 
 #include "main.h"
