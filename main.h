@@ -8,7 +8,7 @@
 #include <limits.h>
 #include <string.h>
 int _putchar(char c);
-
 int _printf(const char *format, ...);
-
+void print_char(char c, int *char_print);
+void print_string(char *str, int *char_print);
 #endif

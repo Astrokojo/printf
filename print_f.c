@@ -5,7 +5,7 @@
 * @c: a character
 * @char_print: prints a character
 */
-static void print_char(char c, int *char_print)
+void print_char(char c, int *char_print)
 {
 	    _putchar(c);
 	    (*char_print)++;
@@ -16,7 +16,7 @@ static void print_char(char c, int *char_print)
 * @str: a string pointer
 * @char_print: prints a character
 */
-static void print_string(char *str, int *char_print)
+void print_string(char *str, int *char_print)
 {
 	int i;
 
