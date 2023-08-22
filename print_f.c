@@ -54,6 +54,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
+			if (*format == '\0')
+				return (-1);
 			if (*format == '%')
 			{
 				print_char('%', &char_print);
