@@ -71,6 +71,12 @@ int _printf(const char *format, ...)
 
 				print_string(str, &char_print);
 			}
+			else if (*format == 'd')
+			{
+				int n = va_arg(arg, int);
+
+				print_char(n, &char_print);
+			}
 		}
 		format++;
 	}
