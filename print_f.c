@@ -75,7 +75,7 @@ int _printf(const char *format, ...)
 			{
 				int n = va_arg(arg, int);
 
-				print_char(c, &char_print);
+				write(1, &n, 1);
 			}
 		}
 		format++;
