@@ -71,7 +71,7 @@ int _printf(const char *format, ...)
 
 				print_string(str, &char_print);
 			}
-			//both "d" and "i" output as integers 
+/*both "d" and "i" output as integers*/
 			else if (*format == 'd' || *format == 'i')
 			{
 				char c = va_arg(arg, int);
