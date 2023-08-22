@@ -29,7 +29,19 @@ int print_string(char *str, int *char_print)
 	}
 	return (i);
 }
+/**
+* print_integer - Print an integer and update character count.
+* @num: an integer pointer
+* @char_print: prints a character
+* Return: num
+*/
+int print_integer(int num, int *char_print)
+{
+		char num_str[12];
 
+		sprintf(num_str, "%d", num);
+		return (print_string(num_str, char_print));
+}
 #include "main.h"
 /**
 *  _printf - a funtion that produces output according to format
@@ -60,23 +72,13 @@ int _printf(const char *format, ...)
 				print_char('%', &char_print);
 			}
 			else if (*format == 'c')
-			{
-				char c = va_arg(arg, int);
+				print_char(va_arg(arg, int), &char_print);
 
-				print_char(c, &char_print);
-			}
 			else if (*format == 's')
-			{
-				char *str = va_arg(arg, char*);
+				print_string(va_arg(arg, char*), &char_print);
 
-				print_string(str, &char_print);
-			}
 			else if (*format == 'd' || *format == 'i')
-			{
-				int n = va_arg(arg, int);
-
-				print_char(n, &char_print);
-			}
+				print_integer(va_arg(arg, int), &char_print);
 		}
 		format++;
 	}
