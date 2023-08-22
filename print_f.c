@@ -79,7 +79,6 @@ int _printf(const char *format, ...)
 
 			else if (*format == 'd' || *format == 'i')
 				print_integer(va_arg(arg, int), &char_print);
-			}
 		}
 		format++;
 	}
