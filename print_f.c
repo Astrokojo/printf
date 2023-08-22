@@ -38,7 +38,7 @@ int print_string(char *str, int *char_print)
 */
 int _printf(const char *format, ...)
 {
-	int char_print = 0;
+	unsigned int char_print = 0;
 	va_list arg;
 
 	if (format == NULL)
