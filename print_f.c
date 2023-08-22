@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 * print_char - Print a character and update character count.
 * @c: a character
