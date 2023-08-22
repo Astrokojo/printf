@@ -11,4 +11,5 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(char c, int *char_print);
 int print_string(char *str, int *char_print);
+void print_int(int number, void *count);
 #endif
