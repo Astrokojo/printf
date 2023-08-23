@@ -71,7 +71,6 @@ int print_binary(unsigned int dig, int *char_print)
 	}
 	return (index);
 }
-#include "main.h"
 /**
 *  _printf - a funtion that produces output according to format
 * @format: a character string
@@ -94,6 +93,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
+			while (*(format + 1) == ' ')
+				format++;
 			if (*format == '\0')
 				return (-1);
 			if (*format == '%')
