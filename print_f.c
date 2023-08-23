@@ -93,7 +93,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			while (*(format + 1) == ' ')
+			while (*format == ' ')
 				format++;
 			if (*format == '\0')
 				return (-1);
