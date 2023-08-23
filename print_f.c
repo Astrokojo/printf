@@ -42,6 +42,35 @@ int print_integer(int num, int *char_print)
 		sprintf(num_str, "%d", num);
 		return (print_string(num_str, char_print));
 }
+/**
+* print_binary - Prints an unsigned int into binary
+* @dig: unsigned int variable
+* @char_print: prints characters
+* Return: int
+*/
+int print_binary(unsigned int dig, int *char_print)
+{
+	char bin_str[33];
+	int index = 0;
+	int i;
+
+	if (dig == 0)
+		bin_str[index++] = '0';
+	else
+	{
+		while (dig > 0)
+		{
+			bin_str[index++] = (dig % 2) + '0';
+			dig /= 2;
+		}
+	}
+	for (i = index - 1; i >= 0; i--)
+	{
+		_putchar(bin_str[i]);
+		(*char_print)++;
+	}
+	return (index);
+}
 #include "main.h"
 /**
 *  _printf - a funtion that produces output according to format
@@ -79,6 +108,9 @@ int _printf(const char *format, ...)
 
 			else if (*format == 'd' || *format == 'i')
 				print_integer(va_arg(arg, int), &char_print);
+
+			else if (*format == 'b')
+				print_binary(va_arg(arg, unsigned int), &char_print);
 		}
 		format++;
 	}
